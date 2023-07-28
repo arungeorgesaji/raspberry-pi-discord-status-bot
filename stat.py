@@ -13,6 +13,8 @@ load_dotenv()
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 # Replace 'YOUR_CHANNEL_ID' with your actual channel ID from the .env file
 CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
+# Replace 'YOUR_ALERT_CHANNEL_ID' with the ID of the alert channel from the .env file
+ALERT_CHANNEL_ID = int(os.getenv('ALERT_CHANNEL_ID'))
 
 # Thresholds for alerts
 RAM_THRESHOLD = 90.0  # Send an alert if RAM usage exceeds 90%
@@ -80,22 +82,41 @@ def get_system_info_embed():
 
     return system_info_embed, alerts
 
+# Variables to store message IDs for editing
+status_message_id = None
+alerts_message_ids = []
+
 # Main event to run the bot
 @client.event
 async def on_ready():
+    global status_message_id  # Declare status_message_id as a global variable
     print(f'We have logged in as {client.user}')
     while True:
         system_info_embed, alerts = get_system_info_embed()
         channel = client.get_channel(CHANNEL_ID)
-        
-        # Send the system status as an embed
-        await channel.send(embed=system_info_embed)
-        
-        # Check and send alerts if necessary
+
+        if not status_message_id:
+            # Send the initial system status as an embed and store the message ID
+            status_message = await channel.send(embed=system_info_embed)
+            status_message_id = status_message.id
+        else:
+            # Edit the existing status message with the updated system status
+            status_message = await channel.fetch_message(status_message_id)
+            await status_message.edit(embed=system_info_embed)
+
+        # Handle alerts
+        alert_channel = client.get_channel(ALERT_CHANNEL_ID)
+        for alert_message_id in alerts_message_ids:
+            # Delete old alert messages
+            alert_message = await alert_channel.fetch_message(alert_message_id)
+            await alert_message.delete()
+
         for alert in alerts:
-            await channel.send(alert)
-        
-        await asyncio.sleep(60)  # Wait for 1 minute before the next update
+            # Send new alert messages and store their message IDs
+            alert_message = await alert_channel.send(alert)
+            alerts_message_ids.append(alert_message.id)
+
+        await asyncio.sleep(10)  # Wait for 1 minute before the next update
 
 # Main function to run the bot
 def run_bot():
