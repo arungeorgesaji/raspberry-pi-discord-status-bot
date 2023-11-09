@@ -116,7 +116,7 @@ async def on_ready():
             alert_message = await alert_channel.send(alert)
             alerts_message_ids.append(alert_message.id)
 
-        await asyncio.sleep(10)  # Wait for 1 minute before the next update
+        await asyncio.sleep(15)  # Wait for 15 seconds before the next update (dont make it too short discord might rate limit your bot)
 
 # Main function to run the bot
 def run_bot():
