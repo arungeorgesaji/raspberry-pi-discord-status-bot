@@ -30,7 +30,7 @@ This project has been tested and verified to work seamlessly with the following 
    ALERT_CHANNEL_ID=your_alert_channel_id
    ```
 
-4. Adjust the threshold values in the `main.py` file if needed.
+4. Adjust the threshold values in the `main.py` file if needed (Line 20-22) .
 
 5. Run the bot using the following command:
    ```
@@ -51,6 +51,6 @@ If you encounter any issues or errors, please check the following:
 - Ensure that the bot has the necessary permissions in the Discord server.
 - Double-check the accuracy of the provided channel IDs and bot token in the `.env` file.
 - Verify that the `vcgencmd` command is available on your Raspberry Pi for reading CPU temperature.
-- Read and attempt to comprehend the errors present in the logs.
+- Read and attempt to comprehend the errors present in the logs a simple search can help you.
   
 Happy monitoring!
