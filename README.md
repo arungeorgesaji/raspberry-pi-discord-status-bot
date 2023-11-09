@@ -40,6 +40,10 @@ This project has been tested and verified to work seamlessly with the following 
 
 6. Your bot is now active and monitoring the system. The initial system status will be displayed, and subsequent updates will follow.
 
+## Example
+![img2](https://cdn.discordapp.com/attachments/1146751151946084362/1172161078596214834/Screenshot_2023-11-09_183508.png)
+![img1](https://cdn.discordapp.com/attachments/1146751151946084362/1172161078877229067/Screenshot_2023-11-09_183907.png)
+
 ## Important Note
 Make sure to invite the bot to your Discord server and provide the necessary permissions. Also, ensure that the `vcgencmd` command is available on your Raspberry Pi for reading CPU temperature.
 
@@ -52,8 +56,7 @@ If you encounter any issues or errors, please check the following:
 - Double-check the accuracy of the provided channel IDs and bot token in the `.env` file.
 - Verify that the `vcgencmd` command is available on your Raspberry Pi for reading CPU temperature.
 - Read and attempt to comprehend the errors present in the logs a simple search can help you.
-  
-## Contributing
+  ## Contributing
 
 We welcome contributions to enhance the functionality and compatibility of this Discord System Monitor Bot. If you have ideas for new features, bug fixes, or improvements, please follow the steps below:
 
