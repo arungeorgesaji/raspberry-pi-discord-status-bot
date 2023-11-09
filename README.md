@@ -23,7 +23,7 @@ This project has been tested and verified to work seamlessly with the following 
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file in the project directory and add the following variables:
+3. Create a `.env` file in the project directory and add the following variables (or rename the one on the repo to .env and add your variables):
    ```
    BOT_TOKEN=your_bot_token
    CHANNEL_ID=your_channel_id
