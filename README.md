@@ -1,5 +1,4 @@
-# Discord System Monitor Bot ![logo]([image_url](https://cdn.discordapp.com/attachments/1146751151946084362/1172155713011859456/icons8-raspberry-pi-48.png)) 
-
+# Discord System Monitor Bot ![img_no_load](https://cdn.discordapp.com/attachments/1146751151946084362/1172155713011859456/icons8-raspberry-pi-48.png) 
 ## Overview
 This Discord bot monitors the system status of a Raspberry Pi and provides real-time updates on RAM usage, CPU usage, CPU temperature, and uptime. Additionally, it sends alerts to a specified channel when certain thresholds are exceeded.
 
