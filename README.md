@@ -53,4 +53,19 @@ If you encounter any issues or errors, please check the following:
 - Verify that the `vcgencmd` command is available on your Raspberry Pi for reading CPU temperature.
 - Read and attempt to comprehend the errors present in the logs a simple search can help you.
   
+## Contributing
+
+We welcome contributions to enhance the functionality and compatibility of this Discord System Monitor Bot. If you have ideas for new features, bug fixes, or improvements, please follow the steps below:
+
+1. Fork the repository to your GitHub account.
+2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
+3. Make your changes and test thoroughly.
+4. Commit your changes with descriptive commit messages: `git commit -m "Add feature-name"`.
+5. Push your branch to your fork: `git push origin feature-name`.
+6. Open a pull request to the `main` branch of this repository.
+
+We appreciate your contributions and look forward to working together to make this Discord bot even better!
+
+Feel free to customize the instructions based on your preferred contribution workflow.
+
 Happy monitoring!
