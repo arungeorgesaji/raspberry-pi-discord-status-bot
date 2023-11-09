@@ -74,11 +74,11 @@ def get_system_info_embed():
     # Create alert messages if any of the thresholds are exceeded
     alerts = []
     if ram_usage > RAM_THRESHOLD:
-        alerts.append(f"<@924561350716444733> 🚨 ALERT: RAM usage is at {ram_usage:.2f}%")
+        alerts.append(f"🚨 ALERT: RAM usage is at {ram_usage:.2f}%")
     if cpu_usage > CPU_THRESHOLD:
-        alerts.append(f"<@924561350716444733> 🚨 ALERT: CPU usage is at {cpu_usage:.2f}%")
+        alerts.append(f" 🚨 ALERT: CPU usage is at {cpu_usage:.2f}%")
     if cpu_temp and cpu_temp > TEMP_THRESHOLD:
-        alerts.append(f"<@924561350716444733> 🚨 ALERT: CPU temperature is at {cpu_temp:.2f}°C")
+        alerts.append(f" 🚨 ALERT: CPU temperature is at {cpu_temp:.2f}°C")
 
     return system_info_embed, alerts
 
