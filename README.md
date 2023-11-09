@@ -11,7 +11,8 @@ This Discord bot monitors the system status of a Raspberry Pi and provides real-
 This project has been tested and verified to work seamlessly with the following Raspberry Pi models:
 
 - Raspberry Pi 4
-
+- Raspberry Pi 5 (Seprate repo with more features comming soon.)
+  
 ## Setup Instructions
 1. Clone the repository to your Raspberry Pi.
    ```
