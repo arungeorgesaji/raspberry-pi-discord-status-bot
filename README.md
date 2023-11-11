@@ -11,7 +11,7 @@ This Discord bot monitors the system status of a Raspberry Pi and provides real-
 This project has been tested and verified to work seamlessly with the following Raspberry Pi models:
 
 - Raspberry Pi 4
-- Raspberry Pi 5 (Seprate repo with more features comming soon.)
+- Raspberry Pi 5(more features will be added soon)
   
 ## Setup Instructions
 1. Clone the repository to your Raspberry Pi.
@@ -26,6 +26,7 @@ This project has been tested and verified to work seamlessly with the following 
 
 3. Create a `.env` file in the project directory and add the following variables (or rename the one on the repo to .env and add your variables):
    ```
+   #current code makes you type this in the main.py itself you can adjust if needed
    BOT_TOKEN=your_bot_token
    CHANNEL_ID=your_channel_id
    ALERT_CHANNEL_ID=your_alert_channel_id
