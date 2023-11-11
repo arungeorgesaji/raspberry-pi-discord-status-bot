@@ -7,9 +7,10 @@ import os
 from dotenv import load_dotenv
 import atexit
 load_dotenv()
-BOT_TOKEN = "MTE3MjE3NDMxNTc5NDQ4MTIzMw.GabLii.9G6y1pFzVzg7lAZIXxpdS7VWy-h7GJJHTutsZs"
-CHANNEL_ID = int("1172166207399530650")
-ALERT_CHANNEL_ID = int("1172166207399530650")
+BOT_TOKEN = "BOT_TOKEN"
+CHANNEL_ID = int("CHANNEL_ID")
+ALERT_CHANNEL_ID = int("ALERT_CHANNEL_ID")
+
 # Thresholds for alerts
 RAM_THRESHOLD = 90.0  # Send an alert if RAM usage exceeds 90%
 CPU_THRESHOLD = 90.0  # Send an alert if CPU usage exceeds 90%
