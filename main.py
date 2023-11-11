@@ -5,17 +5,11 @@ import subprocess
 import asyncio
 import os
 from dotenv import load_dotenv
-
-# Load environment variables from .env file
+import atexit
 load_dotenv()
-
-# Replace 'YOUR_BOT_TOKEN' with your actual bot token from the .env file
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-# Replace 'YOUR_CHANNEL_ID' with your actual channel ID from the .env file
-CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
-# Replace 'YOUR_ALERT_CHANNEL_ID' with the ID of the alert channel from the .env file
-ALERT_CHANNEL_ID = int(os.getenv('ALERT_CHANNEL_ID'))
-
+BOT_TOKEN = "MTE3MjE3NDMxNTc5NDQ4MTIzMw.GabLii.9G6y1pFzVzg7lAZIXxpdS7VWy-h7GJJHTutsZs"
+CHANNEL_ID = int("1172166207399530650")
+ALERT_CHANNEL_ID = int("1172166207399530650")
 # Thresholds for alerts
 RAM_THRESHOLD = 90.0  # Send an alert if RAM usage exceeds 90%
 CPU_THRESHOLD = 90.0  # Send an alert if CPU usage exceeds 90%
@@ -85,6 +79,20 @@ def get_system_info_embed():
 # Variables to store message IDs for editing
 status_message_id = None
 alerts_message_ids = []
+
+#Function which returns a string regarding the version of rasberry pi
+#For Example rasberry pi 5 model b returns:Raspberry Pi 5 Model B Rev 1.0
+def detect_model() -> str:
+    with open('/proc/device-tree/model') as f:
+        model = f.read()
+    return model
+#get the model
+model=detect_model()
+
+# Function to be called when rasberry pi is disconnected
+def exit_function():
+    print(f"Connection to {model} has been halted.")
+atexit.register(exit_function)
 
 # Main event to run the bot
 @client.event
