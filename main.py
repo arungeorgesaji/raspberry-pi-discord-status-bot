@@ -6,10 +6,12 @@ import asyncio
 import os
 from dotenv import load_dotenv
 import atexit
+
 load_dotenv()
-BOT_TOKEN = "BOT_TOKEN"
-CHANNEL_ID = int("CHANNEL_ID")
-ALERT_CHANNEL_ID = int("ALERT_CHANNEL_ID")
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
+ALERT_CHANNEL_ID = int(os.getenv("ALERT_CHANNEL_ID"))
 
 # Thresholds for alerts
 RAM_THRESHOLD = 90.0  # Send an alert if RAM usage exceeds 90%
